@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: spotty-takin-java-springboot-gitops
+  description: This is GitOps manifest for spotty-takin-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: spotty-takin-java-springboot
+    janus-idp.io/tekton: spotty-takin-java-springboot 
+    backstage.io/kubernetes-id: spotty-takin-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:spotty-takin-java-springboot
